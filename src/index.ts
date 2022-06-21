@@ -1,5 +1,5 @@
 import type { List, ListIterateeCustom, ListIterator } from "lodash";
-import { difference, every, isArray, isUndefined, some, without } from "lodash";
+import { difference, every, isArray, isEqual, isUndefined, some, sortBy, without } from "lodash";
 
 /**
  * alias of _.some
@@ -116,4 +116,15 @@ export function validKeysOf<TKey extends string>(
   isValidKey: (key: string) => key is TKey
 ): TKey[] {
   return Object.keys(record).filter(isValidKey);
+}
+
+/**
+ * checks that `a` and `b` are both arrays with the same elements, regardless of the order. It uses Lodash's `isEqual`
+ *
+ * @param a
+ * @param b
+ * @returns
+ */
+export function arraySameElements<T = any>(a: T[], b: T[]): boolean {
+  return isEqual(sortBy(a), sortBy(b));
 }

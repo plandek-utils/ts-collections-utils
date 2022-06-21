@@ -1,4 +1,15 @@
-import { allOf, anyOf, ensureArray, ensureArrayOf, findAndRemove, isArrayOf, isSubset, noneOf, validKeysOf } from "..";
+import {
+  allOf,
+  anyOf,
+  arraySameElements,
+  ensureArray,
+  ensureArrayOf,
+  findAndRemove,
+  isArrayOf,
+  isSubset,
+  noneOf,
+  validKeysOf,
+} from "..";
 
 describe("anyOf", () => {
   const fn = (x: number) => x > 2;
@@ -57,6 +68,25 @@ describe("isSubset", () => {
   });
   it("false with extra stuff", () => {
     expect(isSubset({ set: [1, 2, 3], subset: [3, 2, 4] })).toBe(false);
+  });
+});
+
+describe("arraySameElements", () => {
+  it("true with the same set", () => {
+    expect(arraySameElements([1, 2, 3], [1, 2, 3])).toBe(true);
+  });
+  it("true with the same set, different order", () => {
+    expect(arraySameElements([1, 2, 3], [3, 1, 2])).toBe(true);
+  });
+  it("true with the same set, empty arrays", () => {
+    expect(arraySameElements([], [])).toBe(true);
+  });
+
+  it("false with a subset", () => {
+    expect(arraySameElements([1, 2, 3], [3, 1])).toBe(false);
+  });
+  it("false with extra stuff", () => {
+    expect(arraySameElements([1, 2, 3], [3, 2, 4])).toBe(false);
   });
 });
 

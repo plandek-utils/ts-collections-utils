@@ -36,6 +36,12 @@ isSubset({ set: [1, 2, 3], subset: [3, 1] }); // => true
 isSubset({ set: [1, 2, 3], subset: [3, 1, 2] }); // => true
 isSubset({ set: [1, 2, 3], subset: [3, 2, 4] }); // => false
 
+arraySameElements([1, 2, 3], [1, 2, 3])); // => true
+arraySameElements([1, 2, 3], [3, 1, 2])); // => true
+arraySameElements([], [])); // => true
+arraySameElements([1, 2, 3], [3, 1])); // => false
+arraySameElements([1, 2, 3], [3, 2, 4])); // => false
+
 findAndRemove([1, 2, 3], (x) => x > 3); // => [undefined, [1, 2, 3]]
 findAndRemove([1, 2, 3], (x) => x > 2); // => [3, [1, 2]]
 findAndRemove([1, 2, 3], (x) => x > 0); // => [1, [2, 3]]
