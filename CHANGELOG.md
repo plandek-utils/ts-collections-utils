@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/plandek-utils/ts-collections-utils/compare/v1.0.0...v1.1.0) (2022-06-21)
+
+
+### Features
+
+* arraySameElements ([a7d4a9f](https://github.com/plandek-utils/ts-collections-utils/commit/a7d4a9f98975bf39e2e6157e0718a402176b0aa3))
+
 ## 1.0.0 (2022-06-21)
 
 
