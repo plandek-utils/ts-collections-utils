@@ -2,8 +2,8 @@
 
 [![npm version](https://badge.fury.io/js/%40plandek-utils%2Fts-collections-utils.svg)](https://badge.fury.io/js/%40plandek-utils%2Fts-collections-utils)
 [![Build Status](https://travis-ci.org/plandek-utils/ts-collections-utils.svg?branch=main)](https://travis-ci.org/plandek-utils/ts-collections-utils)
-[![Maintainability](https://api.codeclimate.com/v1/badges/0a2ee0323272ad4910b5/maintainability)](https://codeclimate.com/github/plandek-utils/ts-collections-utils/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/0a2ee0323272ad4910b5/test_coverage)](https://codeclimate.com/github/plandek-utils/ts-collections-utils/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/5a1cbad6e4912247a7f2/maintainability)](https://codeclimate.com/github/plandek-utils/ts-collections-utils/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/5a1cbad6e4912247a7f2/test_coverage)](https://codeclimate.com/github/plandek-utils/ts-collections-utils/test_coverage)
 
 [TypeDoc generated docs in here](https://plandek-utils.github.io/ts-collections-utils)
 
