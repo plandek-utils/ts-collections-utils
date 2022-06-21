@@ -1,7 +1,7 @@
 # `@plandek-utils/ts-collections-utils`
 
 [![npm version](https://badge.fury.io/js/%40plandek-utils%2Fts-collections-utils.svg)](https://badge.fury.io/js/%40plandek-utils%2Fts-collections-utils)
-[![Build Status](https://travis-ci.org/plandek-utils/ts-collections-utils.svg?branch=master)](https://travis-ci.org/plandek-utils/ts-collections-utils)
+[![Build Status](https://travis-ci.org/plandek-utils/ts-collections-utils.svg?branch=main)](https://travis-ci.org/plandek-utils/ts-collections-utils)
 [![Maintainability](https://api.codeclimate.com/v1/badges/0a2ee0323272ad4910b5/maintainability)](https://codeclimate.com/github/plandek-utils/ts-collections-utils/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/0a2ee0323272ad4910b5/test_coverage)](https://codeclimate.com/github/plandek-utils/ts-collections-utils/test_coverage)
 
@@ -109,7 +109,7 @@ And finally push the new tags to github and publish the package to npm.
 
 ```sh
 # Push to git
-git push --follow-tags origin master
+git push --follow-tags origin main
 
 # Publish to NPM (allowing public access, required if the package name is namespaced like `@somewhere/some-lib`)
 yarn publish --access public
@@ -132,7 +132,7 @@ There is a single yarn command for preparing a new release. See [One-step publis
 yarn prepare-release
 
 # Push to git
-git push --follow-tags origin master
+git push --follow-tags origin main
 
 # Publish to NPM (allowing public access, required if the package name is namespaced like `@somewhere/some-lib`)
 yarn publish --access public
