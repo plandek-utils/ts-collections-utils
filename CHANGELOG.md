@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/plandek-utils/ts-collections-utils/compare/v1.1.0...v1.2.0) (2022-10-11)
+
+
+### Features
+
+* add sliceArrayToFitMax functionality ([0b35d88](https://github.com/plandek-utils/ts-collections-utils/commit/0b35d88d0f71796a80630dc9e5b31e1d050aa83b))
+
 ## [1.1.0](https://github.com/plandek-utils/ts-collections-utils/compare/v1.0.0...v1.1.0) (2022-06-21)
 
 
