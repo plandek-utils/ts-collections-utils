@@ -1,5 +1,6 @@
 import type { List, ListIterateeCustom, ListIterator } from "lodash";
 import { difference, every, isArray, isEqual, isUndefined, some, sortBy, without } from "lodash";
+export { ArraySlice, sliceArrayToFitMax } from "./slice-array-to-fit-max";
 
 /**
  * alias of _.some
