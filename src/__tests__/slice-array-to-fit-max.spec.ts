@@ -62,4 +62,7 @@ describe("sliceArrayToFitMax", () => {
       { low: 57, high: 70, value: "five" },
     ]);
   });
+  it("throws an error if it can't find a suitable scale", () => {
+    expect(() => sliceArrayToFitMax([], 1)).toThrowError("Couldn't find a suitable scale");
+  });
 });

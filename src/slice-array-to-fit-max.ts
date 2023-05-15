@@ -1,8 +1,4 @@
-import compact from "lodash.compact";
-import flatMap from "lodash.flatmap";
-import max from "lodash.max";
-import takeRight from "lodash.takeright";
-import times from "lodash.times";
+import { compact, flatMap, max, takeRight, times } from "lodash";
 
 export type ArraySlice<T> = {
   low: number;
