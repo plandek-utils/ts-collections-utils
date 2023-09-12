@@ -59,6 +59,23 @@ if (isArrayOf(list, isNumber) {
 
 ```
 
+### `uniqAndSort` and `uniqAndSortBy`
+
+Same as `_.sortBy` but passing the list first through a Set to remove duplicates. `uniqAndSortBy` with only the list is equivalent to `uniqAndSort`
+
+```ts
+uniqAndSortBy([1, 4, 10, 3, 0, 4, 1]) // => [0, 1, 3, 4, 10]
+uniqAndSort([1, 4, 10, 3, 0, 4, 1]) // => [0, 1, 3, 4, 10]
+
+const fn = (x: number): string => {
+  if (x === 0) return "0-zero"
+  if (x % 2 === 0) return `1-even--${x}`
+  return `2-odd--${x}`
+};
+
+uniqAndSortBy([1, 4, 10, 3, 0, 4, 1], fn) // => [0, 10, 4, 1, 3]
+```
+
 ### `sliceArrayToFitMax`
 
 Util to get a slice of the given array taking into account the max value of a list. It prioritises the right values.

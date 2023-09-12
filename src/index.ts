@@ -1,6 +1,26 @@
-import type { List, ListIterateeCustom, ListIterator } from "lodash";
+import type { List, ListIteratee, ListIterateeCustom, ListIterator, Many } from "lodash";
 import { difference, every, isArray, isEqual, isUndefined, some, sortBy, without } from "lodash";
 export { ArraySlice, sliceArrayToFitMax } from "./slice-array-to-fit-max";
+
+/**
+ * Returns a new array with the unique elements of the given array, sorted.
+ *
+ * @param list
+ */
+export function uniqAndSort<T>(list: T[]): T[] {
+  return sortBy(Array.from(new Set(list)));
+}
+
+/**
+ * Returns a new array with the unique elements of the given array, sorted.
+ *
+ * @param list
+ * @param [iteratees=[_.identity]]
+ *  The iteratees to sort by, specified individually or in arrays.
+ */
+export function uniqAndSortBy<T>(list: T[], ...iteratees: Array<Many<ListIteratee<T>>>): T[] {
+  return sortBy(Array.from(new Set(list)), ...iteratees);
+}
 
 /**
  * alias of _.some

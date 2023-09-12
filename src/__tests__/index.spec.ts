@@ -8,8 +8,44 @@ import {
   isArrayOf,
   isSubset,
   noneOf,
+  uniqAndSort,
+  uniqAndSortBy,
   validKeysOf,
 } from "..";
+
+describe("uniqAndSort", () => {
+  it("empty array", () => {
+    expect(uniqAndSort([])).toEqual([]);
+  });
+  it("uniq and sort", () => {
+    expect(uniqAndSort([1, 4, 10, 3, 4, 1])).toEqual([1, 3, 4, 10]);
+  });
+});
+
+describe("uniqAndSortBy", () => {
+  describe("with iterator function", () => {
+    const fn = (x: number) => {
+      if (x === 0) return "0-zero";
+      if (x % 2 === 0) return `1-even--${x}`;
+      return `2-odd--${x}`;
+    };
+    it("empty array", () => {
+      expect(uniqAndSortBy([], fn)).toEqual([]);
+    });
+    it("uniq and sort", () => {
+      expect(uniqAndSortBy([1, 4, 10, 3, 0, 4, 1], fn)).toEqual([0, 10, 4, 1, 3]);
+    });
+  });
+
+  describe("without iterator function", () => {
+    it("empty array", () => {
+      expect(uniqAndSortBy([])).toEqual([]);
+    });
+    it("uniq and sort", () => {
+      expect(uniqAndSortBy([1, 4, 10, 3, 4, 1])).toEqual([1, 3, 4, 10]);
+    });
+  });
+});
 
 describe("anyOf", () => {
   const fn = (x: number) => x > 2;
