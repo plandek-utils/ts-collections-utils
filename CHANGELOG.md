@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/plandek-utils/ts-collections-utils/compare/v1.2.1...v1.3.0) (2023-09-12)
+
+
+### Features
+
+* adding `uniqAndSort` and `uniqAndSortBy` ([9d7b366](https://github.com/plandek-utils/ts-collections-utils/commit/9d7b3667b38ec0bb70b58b61c16e9c8f01a0ad5e))
+
 ### [1.2.1](https://github.com/plandek-utils/ts-collections-utils/compare/v1.2.0...v1.2.1) (2023-05-15)
 
 ## [1.2.0](https://github.com/plandek-utils/ts-collections-utils/compare/v1.1.0...v1.2.0) (2022-10-11)
