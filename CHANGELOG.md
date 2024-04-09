@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/plandek-utils/ts-collections-utils/compare/v1.3.0...v1.4.0) (2024-04-09)
+
+
+### Features
+
+* adding `divideCollection` function + updated deps ([aae17cb](https://github.com/plandek-utils/ts-collections-utils/commit/aae17cb21cd851538d1358d8ddaf975bc2f1af7f))
+
 ## [1.3.0](https://github.com/plandek-utils/ts-collections-utils/compare/v1.2.1...v1.3.0) (2023-09-12)
 
 
