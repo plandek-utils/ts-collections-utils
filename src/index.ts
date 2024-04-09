@@ -1,6 +1,7 @@
 import type { List, ListIteratee, ListIterateeCustom, ListIterator, Many } from "lodash";
 import { difference, every, isArray, isEqual, isUndefined, some, sortBy, without } from "lodash";
 export { ArraySlice, sliceArrayToFitMax } from "./slice-array-to-fit-max";
+export { divideCollection } from "./divide-collection";
 
 /**
  * Returns a new array with the unique elements of the given array, sorted.

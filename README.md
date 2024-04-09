@@ -18,7 +18,9 @@ Small set of util functions to use with Arrays and other Collections. It uses lo
 ## Usage
 
 ```typescript
-import { anyOf, allOf, noneOf, isSubset, findAndRemove, isArrayOf } from "@plandek-utils/ts-collections-utils";
+import { anyOf, allOf, noneOf, isSubset, findAndRemove, isArrayOf, divideCollection } from "@plandek-utils/ts-collections-utils";
+
+const { positive, negative } = divideCollection([1, 2, 3, -1, -2, -3], (x) => x > 0); // => { positive: [1, 2, 3], negative: [-1, -2, -3] }
 
 anyOf([1, 2, 3], (x) => x > 3); // => false
 anyOf([1, 2, 3], (x) => x > 2); // => true
@@ -83,7 +85,7 @@ Util to get a slice of the given array taking into account the max value of a li
 To see how it behaves, check the following:
 
 ```ts
-const { sliceArrayToFitMax } from "@plandek-utils/ts-collections-utils";
+import { sliceArrayToFitMax } from "@plandek-utils/ts-collections-utils";
 
 const oneToFive = ["one", "two", "three", "four", "five"];
 expect(sliceArrayToFitMax(oneToFive, 1)).toEqual([{ low: 1, high: 1, value: "five" }]);
