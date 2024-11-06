@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/plandek-utils/ts-safe-compact/compare/v1.4.0...v1.5.0) (2024-11-06)
+
+
+### Features
+
+* replace lodash with es-toolkit and adapt to new project structure ([01d2fd6](https://github.com/plandek-utils/ts-safe-compact/commit/01d2fd6c751012c2456b08965a81037bfa1fc99b))
+
 ## [1.4.0](https://github.com/plandek-utils/ts-collections-utils/compare/v1.3.0...v1.4.0) (2024-04-09)
 
 

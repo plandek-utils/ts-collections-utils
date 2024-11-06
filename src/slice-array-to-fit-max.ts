@@ -9,26 +9,25 @@ export type ArraySlice<T> = {
 export function sliceArrayToFitMax<T>(scaleValues: T[], maximumValue: number): ArraySlice<T>[] {
   const indices = times(scaleValues.length);
   const possibleMaxCeilings = indices.map((i) => maximumValue + i);
-  const possibleChunkCounts = compact(
-    flatMap(possibleMaxCeilings, (ceil) => {
-      return flatMap(indices, (i) => {
-        const div = i + 1;
-        const mod = ceil % div;
-        const size = ceil / div;
-        const count = Math.ceil(maximumValue / size);
-        if (mod > 0) return null;
+  const possibleChunkCounts: number[] = [];
+  for (const ceil of possibleMaxCeilings) {
+    for (const i of indices) {
+      const div = i + 1;
+      const mod = ceil % div;
+      const size = ceil / div;
+      const count = Math.ceil(maximumValue / size);
+      if (mod > 0 || count > scaleValues.length) {
+        continue;
+      }
 
-        if (count > scaleValues.length) return null;
-        const upperBound = count * size;
-        const lowerBound = (count - 1) * size;
+      const upperBound = count * size;
+      const lowerBound = (count - 1) * size;
 
-        if (maximumValue > lowerBound && maximumValue <= upperBound) {
-          return count;
-        }
-        return null;
-      });
-    }),
-  );
+      if (maximumValue > lowerBound && maximumValue <= upperBound) {
+        possibleChunkCounts.push(count);
+      }
+    }
+  }
 
   const chunkCount = max(possibleChunkCounts);
   if (!chunkCount) {

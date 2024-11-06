@@ -1,12 +1,14 @@
 {
   "name": "@plandek-utils/ts-collections-utils",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "author": "Eduardo Turiño <eturino@plandek.com>",
   "description": "Small set of utils for collections (arrays and records)",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "commit": "git-cz",
     "build": "tsup",
@@ -21,7 +23,7 @@
   },
   "repository": {
     "type": "github",
-    "url": "https://github.com/plandek-utils/ts-safe-compact"
+    "url": "git+https://github.com/plandek-utils/ts-safe-compact.git"
   },
   "bugs": {
     "url": "https://github.com/plandek-utils/ts-safe-compact/issues"

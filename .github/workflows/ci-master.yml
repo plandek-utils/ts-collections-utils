@@ -1,7 +1,7 @@
 name: CI Master
 on:
   push:
-    branches: master
+    branches: [master, main]
 
 jobs:
   test_and_publish:
@@ -16,14 +16,14 @@ jobs:
           node-version: 22
       - run: npm install
       - run: npm run check
+      - run: npm run build
       - uses: paambaati/codeclimate-action@v9.0.0
         env:
-          CC_TEST_REPORTER_ID: 9fd0504f1b3156e0f5e594ea23ff85c03b2598525ab68f9f62145201b1e19e6c
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           coverageCommand: npm run test
           coverageLocations: |
             ${{github.workspace}}/coverage/lcov.info:lcov
-      - run: npm run build
       - uses: JS-DevTools/npm-publish@v3
         id: publish
         with:
