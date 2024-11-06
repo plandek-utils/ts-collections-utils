@@ -1,7 +1,16 @@
-import type { List, ListIteratee, ListIterateeCustom, ListIterator, Many } from "lodash";
-import { difference, every, isArray, isEqual, isUndefined, some, sortBy, without } from "lodash";
+import { difference, every, isEqual, isUndefined, negate, some, sortBy, without } from "es-toolkit/compat";
+import type { Criterion } from "es-toolkit/dist/compat/array/orderBy";
 export { ArraySlice, sliceArrayToFitMax } from "./slice-array-to-fit-max";
 export { divideCollection } from "./divide-collection";
+
+// Type Utils from lodash
+
+type List<T> = ArrayLike<T>;
+interface ArrayLike<T> {
+  readonly length: number;
+  readonly [n: number]: T;
+}
+type ListIterator<T, TResult> = (value: T, index: number, collection: List<T>) => TResult;
 
 /**
  * Returns a new array with the unique elements of the given array, sorted.
@@ -16,11 +25,11 @@ export function uniqAndSort<T>(list: T[]): T[] {
  * Returns a new array with the unique elements of the given array, sorted.
  *
  * @param list
- * @param [iteratees=[_.identity]]
- *  The iteratees to sort by, specified individually or in arrays.
+ * @param [criteria=[_.identity]]
+ *  The criteria to sort by, specified individually or in arrays.
  */
-export function uniqAndSortBy<T>(list: T[], ...iteratees: Array<Many<ListIteratee<T>>>): T[] {
-  return sortBy(Array.from(new Set(list)), ...iteratees);
+export function uniqAndSortBy<T>(list: T[], ...criteria: Array<Criterion<T> | Array<Criterion<T>>>): T[] {
+  return sortBy(Array.from(new Set(list)), ...criteria);
 }
 
 /**
@@ -63,9 +72,7 @@ export const allOf = every;
  *
  * @see _.every
  */
-export function noneOf<T>(collection: List<T> | null | undefined, predicate?: ListIterateeCustom<T, boolean>): boolean {
-  return !anyOf(collection, predicate);
-}
+export const noneOf: typeof anyOf = negate(anyOf);
 
 /**
  * Checks if all the elements of the subset are present in the set
@@ -99,8 +106,8 @@ export function findAndRemove<T>(list: T[], predicate: ListIterator<T, boolean>)
  * @param predicate The predicate to check the value of the type
  * @returns
  */
-export function isArrayOf<T extends L, L = unknown>(list: any, predicate: (x: L) => x is T): list is T[] {
-  if (!isArray(list)) return false;
+export function isArrayOf<T extends L, L = unknown>(list: unknown, predicate: (x: L) => x is T): list is T[] {
+  if (!Array.isArray(list)) return false;
 
   if (list.length === 0) return true;
   return allOf(list, predicate);
@@ -110,7 +117,7 @@ export function isArrayOf<T extends L, L = unknown>(list: any, predicate: (x: L)
  * If `given` is an array, returns it. Otherwise it wraps it in an array.
  */
 export function ensureArray<T>(given: T | T[]): T[] {
-  if (isArray(given)) return given;
+  if (Array.isArray(given)) return given;
   return [given];
 }
 
@@ -120,8 +127,8 @@ export function ensureArray<T>(given: T | T[]): T[] {
  * @see ensureArray
  * @see isArrayOf
  */
-export function ensureArrayOf<T extends L, L = unknown>(given: any, predicate: (x: L) => x is T): T[] | null {
-  const list = isArray(given) ? given : [given];
+export function ensureArrayOf<T extends L, L = unknown>(given: unknown, predicate: (x: L) => x is T): T[] | null {
+  const list = Array.isArray(given) ? given : [given];
 
   return isArrayOf(list, predicate) ? list : null;
 }
@@ -135,7 +142,7 @@ export function ensureArrayOf<T extends L, L = unknown>(given: any, predicate: (
  */
 export function validKeysOf<TKey extends string>(
   record: Partial<Record<TKey, unknown>>,
-  isValidKey: (key: string) => key is TKey
+  isValidKey: (key: string) => key is TKey,
 ): TKey[] {
   return Object.keys(record).filter(isValidKey);
 }
@@ -147,6 +154,6 @@ export function validKeysOf<TKey extends string>(
  * @param b
  * @returns
  */
-export function arraySameElements<T = any>(a: T[], b: T[]): boolean {
+export function arraySameElements<T = unknown>(a: T[], b: T[]): boolean {
   return isEqual(sortBy(a), sortBy(b));
 }

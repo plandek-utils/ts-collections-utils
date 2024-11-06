@@ -1,3 +1,5 @@
+import { describe, expect, it } from "vitest";
+
 import { divideCollection } from "../divide-collection";
 
 describe("divideCollection", () => {

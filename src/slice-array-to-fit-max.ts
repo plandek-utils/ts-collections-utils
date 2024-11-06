@@ -1,4 +1,4 @@
-import { compact, flatMap, max, takeRight, times } from "lodash";
+import { compact, flatMap, max, takeRight, times } from "es-toolkit/compat";
 
 export type ArraySlice<T> = {
   low: number;
@@ -27,7 +27,7 @@ export function sliceArrayToFitMax<T>(scaleValues: T[], maximumValue: number): A
         }
         return null;
       });
-    })
+    }),
   );
 
   const chunkCount = max(possibleChunkCounts);

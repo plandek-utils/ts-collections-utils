@@ -5,7 +5,7 @@
  */
 export function divideCollection<T>(
   collection: T[] | Set<T>,
-  filterPredicate: (item: T) => boolean
+  filterPredicate: (item: T) => boolean,
 ): { positive: T[]; negative: T[] } {
   const left: T[] = [];
   const right: T[] = [];

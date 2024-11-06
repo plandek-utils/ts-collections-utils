@@ -1,8 +1,6 @@
-import { sliceArrayToFitMax } from "..";
+import { describe, expect, it } from "vitest";
 
-afterAll(() => {
-  global.gc && global.gc();
-});
+import { sliceArrayToFitMax } from "..";
 
 describe("sliceArrayToFitMax", () => {
   const oneToFive = ["one", "two", "three", "four", "five"];

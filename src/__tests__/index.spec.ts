@@ -1,3 +1,5 @@
+import { describe, expect, it } from "vitest";
+
 import {
   allOf,
   anyOf,
@@ -127,7 +129,7 @@ describe("arraySameElements", () => {
 });
 
 describe("isArrayOf", () => {
-  const fn = (x: any): x is number => typeof x === "number";
+  const fn = (x: unknown): x is number => typeof x === "number";
   it("false if no array", () => {
     expect(isArrayOf(null, fn)).toBeFalsy();
     expect(isArrayOf("3", fn)).toBeFalsy();
@@ -157,7 +159,7 @@ describe("ensureArray", () => {
 });
 
 describe("ensureArrayOf", () => {
-  const fn = (x: any): x is number => typeof x === "number";
+  const fn = (x: unknown): x is number => typeof x === "number";
 
   it("with empty array => same", () => {
     const a: unknown[] = [];
