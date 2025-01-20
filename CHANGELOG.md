@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/plandek-utils/ts-safe-compact/compare/v1.4.0...v1.6.0) (2025-01-20)
+
+
+### Features
+
+* replace lodash with es-toolkit and adapt to new project structure ([01d2fd6](https://github.com/plandek-utils/ts-safe-compact/commit/01d2fd6c751012c2456b08965a81037bfa1fc99b))
+
+
+### Bug Fixes
+
+* **deps:** bump es-toolkit from 1.26.1 to 1.27.0 ([#1](https://github.com/plandek-utils/ts-safe-compact/issues/1)) ([5380a6c](https://github.com/plandek-utils/ts-safe-compact/commit/5380a6c70bc955f7ff10751c5498ac968800eb07))
+* **deps:** bump es-toolkit from 1.27.0 to 1.29.0 ([#15](https://github.com/plandek-utils/ts-safe-compact/issues/15)) ([9189f12](https://github.com/plandek-utils/ts-safe-compact/commit/9189f120656a12e79b3abd18b68b8f119d3fdd92))
+* **deps:** bump es-toolkit from 1.29.0 to 1.30.0 ([#19](https://github.com/plandek-utils/ts-safe-compact/issues/19)) ([2aacb7f](https://github.com/plandek-utils/ts-safe-compact/commit/2aacb7fc570522144c1cf59020ef28a3817022bf))
+* **deps:** bump es-toolkit from 1.30.0 to 1.30.1 ([#20](https://github.com/plandek-utils/ts-safe-compact/issues/20)) ([691393c](https://github.com/plandek-utils/ts-safe-compact/commit/691393cddaf320ca5b0be0fd15014a8b99b40644))
+* **deps:** bump es-toolkit from 1.30.1 to 1.31.0 ([#23](https://github.com/plandek-utils/ts-safe-compact/issues/23)) ([3d6986c](https://github.com/plandek-utils/ts-safe-compact/commit/3d6986c134032aef14c9ad1caa4e3219c62b2bc9))
+
 ## [1.5.0](https://github.com/plandek-utils/ts-safe-compact/compare/v1.4.0...v1.5.0) (2024-11-06)
 
 
