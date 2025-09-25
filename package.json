@@ -35,7 +35,7 @@
     "@biomejs/biome": "1.9.4",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^20.0.0",
-    "@commitlint/cz-commitlint": "^19.5.0",
+    "@commitlint/cz-commitlint": "^20.0.0",
     "@types/node": "^24.0.0",
     "@vitest/coverage-v8": "^2.1.4",
     "commitizen": "^4.3.1",
